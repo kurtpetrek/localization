@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Localization</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="jumbotron" id="main-jumbo">
+            <div class="logo-header">
+                <h1><a href="index.html">Localization</a></h1>
+                <p>Localize <span id="tag-changer">Information</span></p>
+            </div>
+    </div>
+    <!-- Ends Jumbotron -->
+
+    <div class="container" id="main-content">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 text-center">
+                <h3 class="p-a-3">Localization gives you information on government representatives based on your current location.</h3>
+                <h3 class="p-a-3 margin-tb-20">This app is still in beta.</h3>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row margin-tb-20">
+            <div class="col-sm-3">
+                
+            </div>
+            <div class="col-sm-6 text-center">
+                <p class="margin-tb-20">This app will not track you and only uses your location to gather information.</p>
+                <button onclick="getLocation()" style="width:200px">Use My Location</button>
+            </div>
+            <div class="col-sm-3">
+                
+            </div>
+        </div>
+        <div class="row" id="error">
+            
+        </div>
+    </div>
+    <!-- Ends Container -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-3" id="main-left-button"></div>
+            <div class="col-xs-3" id="main-right-button"></div>
+            <div class="col-xs-3"></div>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $("#tag-changer").fadeOut(5);
+        var mainHeaderText = ["Legislation", "Government", "Information", "Power", "Decisions", "Community"],
+            mainHeaderTextCounter = 0;
+        $("#tag-changer").fadeIn(1000).html(mainHeaderText[mainHeaderTextCounter]).delay(2000).fadeOut(1000);
+            mainHeaderTextCounter++;
+        setInterval(function(){ 
+            $("#tag-changer").fadeIn(1000).html(mainHeaderText[mainHeaderTextCounter]).delay(2000).fadeOut(1000);
+            mainHeaderTextCounter++;
+            if (mainHeaderTextCounter >= mainHeaderText.length) {
+                mainHeaderTextCounter = 0;
+            }
+        }, 4400);
+        
+        
+        
+        
+    </script>
+</body>
+
+</html>
